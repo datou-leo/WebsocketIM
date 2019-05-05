@@ -8,5 +8,6 @@
 ![image](Screenshots/1.png)
 ![image](Screenshots/2.jpg)
 
+注意:
 命令行执行php socket.php
 再启动服务器
