@@ -3,6 +3,6 @@
 
 ![image](Screenshots/1.png)
 ![image](Screenshots/2.jpg)
-![image](Screenshots/3.jpg)
+![image](Screenshots/3.png)
 命令行执行php socket.php
-在启动服务器
+再启动服务器
