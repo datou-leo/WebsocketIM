@@ -259,7 +259,7 @@
     function li_click(){
         $(".user-list").find("li").each(function(){
             $(this).click(function(){
-                $(".chat-container").css("display","none");
+                $(".chat-container").hide();
                 var user = $(this).data("user");
                 var userinfo = user.split("#");
                 var uid=userinfo[0];//uid
@@ -267,8 +267,13 @@
                 if($("div").is("."+uid)){
                     $("."+uid).css("display","block");
                 }else{
-                    $(".panel-body-container").append("<div class='panel_body chat_container "+uid+"' ></div>");
+                    $(".panel-body-container").append("<div class='panel-body chat-container "+uid+"' ></div>");
                 }
+
+                //出现滑动条时，让滑动条滑动到底部
+                var div = $(".panel-body-container")[0];
+                div.scrollTop = div.scrollHeight;
+
                 $(this).children("i").remove();
                 $("#towho").val(user);
                 $(".chat-panel .panel-title").html(name);
@@ -351,7 +356,7 @@
             var avatar="__STATIC__/head/"+userinfo[2]+".jpg";//头像
             //如果页面上没有消息面板就创建一个消息面板，填入消息，在头像旁边显示数字1
             if(!$("div").is("."+uid)){
-                $(".panel-body-container").append("<div class='panel_body chat_container "+uid+"' style='display:none'>"+"<div class='buddy'><span><img class='avatar' src='"+avatar+"' ></span><span><p class='nick-name'>"+name+"</p><p class='chat-content'>"+message+"</p></span></div>"+"</div>");
+                $(".panel-body-container").append("<div class='panel-body chat-container "+uid+"' style='display:none'>"+"<div class='buddy'><span><img class='avatar' src='"+avatar+"' ></span><span><p class='nick-name'>"+name+"</p><p class='chat-content'>"+message+"</p></span></div>"+"</div>");
                 $(".user-list").find("li").each(function(){
                     if($(this).data("user").indexOf(uid)>=0){
                         $(this).find(".nick-name").after("<i class='badge'>1</i>");
@@ -364,7 +369,7 @@
                 if($("#towho").val().indexOf(uid)<0){
                     $(".user-list").find("li").each(function(){
                         var dt = $(this);
-                        if(dt.data("user").indexOf(uid)){
+                        if(dt.data("user").indexOf(uid)!=-1){
                             if(dt.find(".badge").length>0){
                                 var num_html = dt.find(".badge").html();
                                 var num = parseInt(num_html);
@@ -376,8 +381,9 @@
                         }
                     });
                 }else{
-                    //开始出现滑动条
-
+                    //出现滑动条时，让滑动条滑动到底部
+                    var div = $(".panel-body-container")[0];
+                    div.scrollTop = div.scrollHeight;
                 }
             }
 
@@ -406,9 +412,9 @@
         $(".chat-panel ."+uid).append("<div class='myself' ><span><img class='myimg' src='"+my_avatar+"' ></span><span><p class='nick-name'>"+my_name+"</p><p class='chat-content'>"+message+"</p></span></div>");
         $(".chat-toolbar .input").html("");
 
-        //开始出现滑动条
-        //var scrollHeight = $("."+$("#toName").html()).prop("scrollHeight");
-        //  $("#panelBodyWrapper-5").scrollTop(scrollHeight, 200);
+        //出现滑动条时，让滑动条滑动到底部
+        var div = $(".panel-body-container")[0];
+        div.scrollTop = div.scrollHeight;
 
     }
 
