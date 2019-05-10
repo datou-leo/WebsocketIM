@@ -1,0 +1,227 @@
+html,body{
+    height:100%;
+    overflow: hidden;
+    font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+button:hover {
+    cursor: pointer;
+}
+
+.wrap{
+    display: none;
+    height:100%;
+}
+
+@media screen and (max-width:640px) {
+    button {
+        width: 100%;
+        margin: 2% auto;
+        padding: 10px;
+    }
+}
+
+.layer-right{
+    display: flex;
+    height:100%;
+
+}
+
+.session{
+    width:200px;
+    height:100%;
+    border-right:1px solid #ccc;
+}
+.panel{
+    width:100%;
+    display:flex;
+    height:100%;
+    flex-direction: column; /*定义排列方向为竖排*/
+}
+.panel-header{
+    width:100%;
+    height:50px;
+    background-color: #1a1919;
+}
+.panel-header .panel-title{
+    width:100%;
+    display:block;
+    text-align: center;
+    font-size: 15px;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    line-height: 50px;
+    color:white;
+
+}
+.user-list{
+    padding:0;
+    margin:0;
+    width:100%;
+    flex: 1;
+    overflow-y:auto;
+}
+
+.user-list li{
+    width:100%;
+    float:left;
+    border-color: #ccc;
+    background: #f1f1f1;
+    list-style: none;
+    cursor:hand;
+}
+.list-item{
+    width:100%;
+    height:45px;
+    margin-top:2px;
+    display: table-cell;
+}
+
+.list-item p .badge{margin-left:10px;position:relative;display:inline-block;padding:0 6px;font-size:12px;text-align:center;background-color:#FF5722;color:#fff;border-radius:2px}
+
+.list-item .avatar{
+    float: left;
+}
+
+.list-item .avatar img {
+    width: 45px;
+    height: 45px;
+    vertical-align:middle;
+}
+
+.list-item .nick-name{
+    float:left;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.chat-panel {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column; /*定义排列方向为竖排*/
+}
+.chat-panel .panel-body-container{
+    overflow-y: auto;
+    flex:1; /*中间分配剩下的所有空间*/
+}
+
+.chat-container{
+    background: #ededed;
+    overflow-y: auto;
+}
+
+.panel .panel-footer{
+    width:100%;
+    height:50px;
+    border:1px solid #ccc;
+    display:block;
+}
+.panel .panel-footer .chat-toolbar{
+    background-color: #1a1919;
+    padding:10px 10px 10px 6px;
+    display: flex;
+    position:relative;
+}
+.panel .panel-footer .chat-toolbar .add-face{
+    cursor:pointer;
+}
+
+.panel .panel-footer .chat-toolbar .input{
+    width:100%;
+    display:block;
+    background:#ffffff;
+    padding:5px 10px;
+    border-radius: 5px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.chat-toolbar ul{list-style: none; padding: 0;margin: 0;}
+.chat-toolbar ul{ overflow: hidden; width: 360px; position: absolute; left:0; top:-164px; display:none;background: #ffffff;border:1px solid #ccc;}
+.chat-toolbar li{float:left;_display:inline; width: 22px; height: 22px; margin: 0 5px 5px 0; cursor: pointer;}
+
+.panel .panel-footer .chat-toolbar button{
+    width:56px;
+    padding: 6px 10px;
+    border: 1px solid #044062;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(top, #5f9cc5, #396b9e);
+    background: -moz-linear-gradient(top, #5f9cc5, #396b9e);
+    background: -ms-linear-gradient(top, #5f9cc5, #396b9e);
+    background: -o-linear-gradient(top, #5f9cc5, #396b9e);
+    color:#ffffff;
+    text-shadow: 0 1px 1px #194b7e;
+}
+
+.myself,.buddy{
+    width:100%;
+    padding:10px 0;
+    display:inline-block;
+    height:auto;
+}
+
+.myself .myimg{
+    float: right;
+    width: 40px;
+    height: 40px;
+    display:inline-block;
+    margin-right:10px;
+}
+.buddy .avatar{
+    float: left;
+    width: 40px;
+    height: 40px;
+    display:inline-block;
+    margin-left:10px;
+}
+
+.myself span{
+    display: inline-block;
+    float:right;
+}
+
+.myself span p,.buddy span p{
+    padding:0;
+    margin:0;
+    display: block;
+}
+
+.myself .chat-content,.buddy .chat-content{
+    padding:10px 15px;
+    background: linear-gradient(#cf9, #9c3);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #000;
+}
+.myself .nick-name{
+    text-align: right;
+    margin-right:10px;
+
+}
+.myself .chat-content{
+    margin-top:10px;
+    margin-right:10px;
+}
+
+.buddy span{
+    display: inline-block;
+    float:left;
+}
+
+
+.buddy .nick-name{
+    text-align: left;
+    margin-left:10px;
+}
+
+.buddy .chat-content{
+    margin-top:10px;
+    margin-left:10px;
+}
+.badge{
+    font-size: 12px;
+    text-align: center;
+    background-color: #FF5722;
+    color: #fff;
+    border-radius: 2px;
+    padding:0 6px;
+}
